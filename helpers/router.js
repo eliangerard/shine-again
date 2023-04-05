@@ -8,30 +8,7 @@ const app = document.getElementById("app");
 let homeHTML = `
 
 `;
-let formHTML = `
-        <div id="contenido">
-            <div id="contenidoPregunta">
-                <form action="">
-                    <div id="preguntaPapa">
-    
-                        <label id="pregunta">¿Cómo te sientes hoy?</label>
-                        
-                    </div>
-                    <div>
-                        <input type="radio" name="bom" class="respuesta">Bien
-                        <input type="radio" name="bom" class="respuesta">Mal
-                        <input type="radio" name="bom" class="respuesta">Mal
-                        <input type="radio" name="bom" class="respuesta">Mal
-                    </div>
-                    <button>Siguiente</button>
-                </form>
-            </div>
-            <div id="monito">
-
-                
-            </div>
-        </div>
-`;
+let formHTML = fs.readFile("../components/form.html");
 let calendarHTML = `
 <div id="calendarS" onload="generar()">
     <h3 id="monthTitle">Abril</h3>
