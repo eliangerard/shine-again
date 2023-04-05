@@ -1,0 +1,229 @@
+:root {
+    --gray: #9b9b9b;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    width: 100%;
+    height: calc(100% - 5rem);
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    z-index: 100;
+}
+#profile {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    justify-content: space-around;
+    padding-right: 1rem;
+}
+#profile svg {
+    width: 2rem;
+    fill: #9b9b9b;
+    border-radius: 1rem;
+    height: 2rem;
+    padding: 0.3rem;
+    transition: fill 150ms, background-color 150ms;
+}
+#profile svg:hover {
+    fill: #d4a815;
+    cursor: pointer;
+    background-color: #ffecb0b6;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    width: 2rem;
+    padding: 1rem;
+    overflow: hidden;
+    top: 0rem;
+    left:0;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    transition: width 150ms;
+}
+nav h2 {
+    font-size: medium;
+}
+nav:hover{
+    width: 12rem;
+}
+
+#logo {
+    height: 2rem;
+    width: 3.5rem;
+}
+
+.icon {
+    height: 2rem;
+    
+}
+
+.avatarSmall {
+    height: 3rem;
+}
+
+#active {
+    fill: black;
+}
+
+nav div {
+    display: flex;
+    position: relative;
+    width: 12rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--gray);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: background-color 150ms;
+    fill: var(--gray);
+    user-select: none;
+    cursor: pointer;
+}
+nav div svg {
+    width: 2rem;
+    margin-right: 1rem;
+    transition: margin 150ms;
+}
+#logo {
+    margin-left: 2rem;
+}
+nav div:hover {
+    color: #d4a815;
+    background-color: #ffecb0b6;
+    fill: #d4a815;
+}
+nav:hover svg{
+    margin: 0 1rem;
+}
+#app {
+    margin-left: 5rem;
+    margin-top: 5rem;
+    height: 100%;
+}
+#calendarS {
+    margin: 3rem;
+}
+h3 {
+    font-size: 2rem;
+}
+table {
+    margin-left: 5rem;
+    font-family: 'Poppins',sans-serif;
+    width: 70%;
+    border-collapse: separate;
+    border-spacing: 0.3rem;
+    background-color: #f0f0f0;
+    border-radius: 1rem;
+}
+th {
+    padding: 1rem;
+}
+td {
+    height: 6rem;
+    width: 6rem;
+    text-align: right;
+    transition: background-color 150ms;
+    border-radius: 1rem;
+    margin: 0.3rem 2w;
+    padding: 1rem;
+}
+td:not(.empty){
+    font-weight: bold;
+}
+tr {
+    padding: 1rem;
+}
+td:hover {
+    background-color: #ffecb0b6;
+}
+
+.empty {
+    color: rgba(0, 0, 0, 0.486);
+}
+#contenido {
+    display: flex;
+    height: 100%;
+}
+#contenidoPregunta {
+    width: 60%;
+    height: 100%;
+}
+#preguntaPapa {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+#pregunta {
+    font-weight: bold;
+    font-size: 3rem;
+}
+#monito {
+    width: 40%
+}
+
+@media screen and (max-width:800px){
+    nav {
+        width: 100%;
+        height: 5rem;
+        bottom: 0;
+        padding: 0;
+        top: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        box-shadow: -1px -4px 15px 2px rgba(0,0,0,0.2);
+    }
+    #app {
+        margin-left: 1rem;
+    }
+    #pregunta {
+        font-size: 1rem;
+    }
+    nav div {
+        width: 4rem;
+    }
+    nav h2 {
+        display: none;
+    }
+    nav:hover {
+        width: 100%;
+    }
+    nav svg{
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width:330px){
+    nav div {
+        display: flex;
+        justify-content: center;
+        width: 3rem;
+        padding: 0;
+    }
+    nav div svg {
+        margin: 0;
+    }
+    nav:hover svg{
+        margin: 0;
+    }
+}
