@@ -5,28 +5,21 @@ const resources = document.getElementById("btnRes");
 const call = document.getElementById("btnCall");
 
 const app = document.getElementById("app");
-let homeHTML = `
 
-`;
-let formHTML = fs.readFile("../components/form.html");
-let calendarHTML = `
-<div id="calendarS" onload="generar()">
-    <h3 id="monthTitle">Abril</h3>
-    <button id="nextMonthBtn" onclick="generateNextMonthCalendar()">Siguiente mes</button>
-    <a href="tel:+1234567890">Llamar al número</a>
-    <table id="calendar">
-
-    </table>
-</div>
-`;
-let resHTML = `
-
-`;
-let callHTML = `
-
-`;
-
-window.router = (page)=>{
+let homeHTML, calendarHTML, callHTML, formHTML, resHTML;
+let loaded = false;
+const loadComponents = async () => {
+    homeHTML = await fetch("http://192.168.0.100:5500/components/home.html").then(response => response.text());
+    formHTML = await fetch("http://192.168.0.100:5500/components/form.html").then(response => response.text());
+    calendarHTML = await fetch("http://192.168.0.100:5500/components/calendar.html").then(response => response.text());
+    resHTML = await fetch("http://192.168.0.100:5500/components/resources.html").then(response => response.text());
+    callHTML = await fetch("http://192.168.0.100:5500/components/call.html").then(response => response.text());
+    loaded = true;
+}
+loadComponents();
+window.router = async (page)=>{
+    if(!loaded)
+        await loadComponents();
     if(page == 0)
         app.innerHTML = homeHTML;
     if(page == 1)
@@ -39,9 +32,3 @@ window.router = (page)=>{
         app.innerHTML = callHTML;
 
 }
-
-home.addEventListener("click", router(0));
-form.addEventListener("click", router(1));
-calendar.addEventListener("click", router(2));
-resources.addEventListener("click", router(3));
-call.addEventListener("click", router(4));

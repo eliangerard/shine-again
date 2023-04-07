@@ -28,15 +28,15 @@ header {
 #profile {
     display: flex;
     align-items: center;
-    width: 10rem;
+    width: 6rem;
     justify-content: space-around;
     padding-right: 1rem;
 }
 #profile svg {
-    width: 2rem;
+    width: 1.5rem;
     fill: #9b9b9b;
     border-radius: 1rem;
-    height: 2rem;
+    height: 1.5rem;
     padding: 0.3rem;
     transition: fill 150ms, background-color 150ms;
 }
@@ -48,15 +48,16 @@ header {
 nav {
     display: flex;
     flex-direction: column;
-    height:100vh;
+    height: calc(100vh - 2rem);
     width: 2rem;
     padding: 1rem;
     overflow: hidden;
-    top: 0rem;
+    top: 0;
     left:0;
     position: fixed;
     background-color: rgb(255, 255, 255);
     transition: width 150ms;
+    border-radius: 0 1rem 1rem 0 ;
 }
 nav h2 {
     font-size: medium;
@@ -76,7 +77,7 @@ nav:hover{
 }
 
 .avatarSmall {
-    height: 3rem;
+    height: 2.5rem;
 }
 
 #active {
@@ -117,7 +118,7 @@ nav:hover svg{
     margin: 0 1rem;
 }
 #app {
-    margin-left: 5rem;
+    margin-left: 10rem;
     margin-top: 5rem;
     height: 100%;
 }
@@ -181,7 +182,30 @@ td:hover {
 #monito {
     width: 40%
 }
-
+.navActive {
+    fill:#d4a815;
+}
+article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 0.5rem 3rem;
+    width: 60%;
+    border: 2px solid #f0f0f0;
+    color: #9b9b9b;
+}
+article textarea {
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 80%;
+    resize: none;
+}
+article textarea:focus {
+    border: none;
+    outline: none;
+}
 @media screen and (max-width:800px){
     nav {
         width: 100%;
@@ -191,7 +215,8 @@ td:hover {
         top: auto;
         flex-direction: row;
         justify-content: space-around;
-        box-shadow: -1px -4px 15px 2px rgba(0,0,0,0.2);
+        border-radius: 1rem 1rem 0 0;
+        box-shadow: -1px 0px 15px 2px rgba(0,0,0,0.1);
     }
     #app {
         margin-left: 1rem;
