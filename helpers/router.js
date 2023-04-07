@@ -9,26 +9,50 @@ const app = document.getElementById("app");
 let homeHTML, calendarHTML, callHTML, formHTML, resHTML;
 let loaded = false;
 const loadComponents = async () => {
-    homeHTML = await fetch("http://192.168.0.100:5500/components/home.html").then(response => response.text());
-    formHTML = await fetch("http://192.168.0.100:5500/components/form.html").then(response => response.text());
-    calendarHTML = await fetch("http://192.168.0.100:5500/components/calendar.html").then(response => response.text());
-    resHTML = await fetch("http://192.168.0.100:5500/components/resources.html").then(response => response.text());
-    callHTML = await fetch("http://192.168.0.100:5500/components/call.html").then(response => response.text());
+
+    const homeHtmlUrl = new URL("../components/home.html", import.meta.url);
+    const formHtmlUrl = new URL("../components/form.html", import.meta.url);
+    const calendarHtmlUrl = new URL("../components/calendar.html", import.meta.url);
+    const resHtmlUrl = new URL("../components/resources.html", import.meta.url);
+    const callHtmlUrl = new URL("../components/call.html", import.meta.url);
+
+    homeHTML = await fetch(homeHtmlUrl).then(response => response.text());
+    formHTML = await fetch(formHtmlUrl).then(response => response.text());
+    calendarHTML = await fetch(calendarHtmlUrl).then(response => response.text());
+    resHTML = await fetch(resHtmlUrl).then(response => response.text());
+    callHTML = await fetch(callHtmlUrl).then(response => response.text());
+    
     loaded = true;
 }
 loadComponents();
 window.router = async (page)=>{
+    form.classList.remove("navActive");
+    home.classList.remove("navActive");
+    calendar.classList.remove("navActive");
+    resources.classList.remove("navActive");
+    call.classList.remove("navActive");
     if(!loaded)
         await loadComponents();
-    if(page == 0)
+    if(page == 0){
         app.innerHTML = homeHTML;
-    if(page == 1)
+        home.classList.add("navActive");
+        loadNotas();  
+    }
+    if(page == 1) {
         app.innerHTML = formHTML;
-    if(page == 2)
+        form.classList.add("navActive");
+    }   
+    if(page == 2){
         app.innerHTML = calendarHTML;
-    if(page == 3)
+        calendar.classList.add("navActive");
+    }
+    if(page == 3){
         app.innerHTML = resHTML;
-    if(page == 4)
+        resources.classList.add("navActive");
+    }
+    if(page == 4){
         app.innerHTML = callHTML;
+        call.classList.add("navActive");
+    }
 
 }

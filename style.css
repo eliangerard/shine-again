@@ -96,7 +96,7 @@ nav div {
     padding: 0.5rem 0;
     border-radius: 1rem;
     font-weight: bold;
-    transition: background-color 150ms;
+    transition: background-color 150ms, color 150ms, fill 150ms;
     fill: var(--gray);
     user-select: none;
     cursor: pointer;
@@ -120,7 +120,8 @@ nav:hover svg{
 #app {
     margin-left: 10rem;
     margin-top: 5rem;
-    height: 100%;
+    height: auto;
+    padding-bottom: 5rem;
 }
 #calendarS {
     margin: 3rem;
@@ -184,6 +185,7 @@ td:hover {
 }
 .navActive {
     fill:#d4a815;
+    color: #d4a815;
 }
 article {
     display: flex;
@@ -191,6 +193,7 @@ article {
     justify-content: space-between;
     border-radius: 1rem;
     padding: 0.5rem 3rem;
+    margin: 1rem 0;
     width: 60%;
     border: 2px solid #f0f0f0;
     color: #9b9b9b;
@@ -205,6 +208,14 @@ article textarea {
 article textarea:focus {
     border: none;
     outline: none;
+}
+article textarea:focus + article {
+    outline: #d4a815 2px solid;
+}
+#callme {
+    text-align: center;
+    margin-top: 7rem;
+    line-height: 3rem;
 }
 @media screen and (max-width:800px){
     nav {

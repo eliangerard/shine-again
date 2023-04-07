@@ -1,5 +1,6 @@
 <h3>Bienvenido</h3>
 <article>
-    <textarea oninput="resize()" name="nota" id="note"></textarea>
-    <i>06/04/2023</i>
+    <textarea oninput="resize()" onblur="guardarNota()" name="nota" id="note"></textarea>
+    <i id="date">06/04/2023</i>
 </article>
+<div id="notas"></div>

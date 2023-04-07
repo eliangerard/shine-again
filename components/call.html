@@ -1,0 +1,25 @@
+<div id="callme">
+    <div>
+        <head>
+            <title>Llamar</title>
+        </head>
+        <body>
+            <label for="telefono">Agregar un contacto de confianza</label>
+            <input type="text" id="telefono" name="telefono">
+            <button onclick="llamar()">Llamar</button>
+    
+            <script>
+                function llamar() {
+                    var telefono = document.getElementById("telefono").value;
+                    window.location.href = "tel:" + telefono;
+                }
+            </script>
+        </body>
+    </div>
+    <div>
+        <a href="tel:911">Linea de emergencia 911</a>
+    </div>
+    <div>
+        <a href="tel:018000127274">Línea directa de ayuda 018000127274</a>
+    </div>
+</div>
