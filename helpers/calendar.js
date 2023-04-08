@@ -1,14 +1,12 @@
 let month = new Date().getMonth();
 
 function generateCalendar(date) {
-    console.log(month);
-  const table = document.getElementById("calendar");
+  console.log(month);
+  const table = document.getElementById("calendarDays");
   const daysOfWeek = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
   // Eliminar la tabla anterior
-  while (table.firstChild) {
-    table.removeChild(table.firstChild);
-  }
+  table.innerHTML = "";
 
   // Crear el encabezado de la tabla con los días de la semana
   const headerRow = document.createElement("tr");
@@ -40,15 +38,23 @@ function generateCalendar(date) {
     for (let j = 0; j < 7; j++) {
       const cell = document.createElement("td");
       if (i === 0 && j < firstDayOfWeek) {
+        const day = daysInLastMonth - firstDayOfWeek + j + 1;
         // Celda vacía para los días del mes anterior
-        cell.textContent = daysInLastMonth - firstDayOfWeek + j + 1;
+        cell.textContent = day;
         cell.classList.add("empty");
+        cell.setAttribute("id", "bef_day_" + day);
+        cell.setAttribute("onclick", "openDay(id)");
       } else if (dayOfMonth > daysInMonth) {
+        const day = dayOfMonth - daysInMonth;
         // Celda vacía para los días del mes siguiente
-        cell.textContent = dayOfMonth - daysInMonth;
+        cell.textContent = day;
         cell.classList.add("empty");
+        cell.setAttribute("id", "aft_day_" + day);
+        cell.setAttribute("onclick", "openDay(id)");
         dayOfMonth++;
       } else {
+        cell.setAttribute("id", "day_" + dayOfMonth);
+        cell.setAttribute("onclick", "openDay(id)");
         // Celda con el número del día
         cell.textContent = dayOfMonth;
         dayOfMonth++;
@@ -62,6 +68,15 @@ function generateCalendar(date) {
 window.generateNextMonthCalendar = () => {
   const date = new Date();
   month = month == 11 ? 0 : month + 1;
+  date.setMonth(month);
+  const nextMonth = date.toLocaleString("default", { month: "long" });
+  document.getElementById("monthTitle").textContent = nextMonth;
+  generateCalendar(date);
+}
+
+window.generateLastMonthCalendar = () => {
+  const date = new Date();
+  month = month == 0 ? 11 : month - 1;
   date.setMonth(month);
   const nextMonth = date.toLocaleString("default", { month: "long" });
   document.getElementById("monthTitle").textContent = nextMonth;

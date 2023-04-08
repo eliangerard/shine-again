@@ -1,8 +1,131 @@
-<div id="calendarS" onload="generar()">
-    <h3 id="monthTitle">Abril</h3>
-    <button id="nextMonthBtn" onclick="generateNextMonthCalendar()">Siguiente mes</button>
-    <a href="tel:+1234567890">Llamar al número</a>
-    <table id="calendar">
+<div id="calendarSection">
+    <div id="calendarApp">
+    <h3>Agendar cita</h3>
+        <div id="calendar">
+            <div id="btnsCalendar">
+                <button class="monthBtn" onclick="generateLastMonthCalendar()">
+                    Atrás
+                </button>
+                <h4 id="monthTitle">Abril</h4>
+                <button class="monthBtn" onclick="generateNextMonthCalendar()">
+                    Siguiente
+                </button>
+            </div>
+            <table id="calendarDays">
+            </table>
+        </div>
+    </div>
+    <div id="day">
+        <h4>4 de abril</h4>
+        <div id="hours">
+            
+            <div class="hourInfo">
+                <div class="time">
+                    8:00 am
+                </div>
+                <div class="hour">
 
-    </table>
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    9:00 am
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    10:00 am
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    11:00 am
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    12:00 am
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    1:00 pm
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    2:00 pm
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    3:00 pm
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    4:00 pm
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    5:00 pm
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    6:00 pm
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+            <div class="hourInfo">
+                <div class="time">
+                    7:00 pm
+                </div>
+                <div class="hour">
+
+                </div>
+            </div>
+        </div>
+        <div id="dayBottom">
+            <div id="timeOptions">
+                <p>30 mins</p>
+                <p>1 hr</p>
+                <p>2 hrs</p>
+            </div>
+            <div id="dayButtons">
+                <button class="secondary" onclick="closeDay()">Cancelar</button>
+                <button class="primary">Agendar</button>
+            </div>
+        </div>
+    </div>
 </div>

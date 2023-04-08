@@ -5,6 +5,7 @@ const resources = document.getElementById("btnRes");
 const call = document.getElementById("btnCall");
 
 const app = document.getElementById("app");
+let firstLoad = true;
 
 let homeHTML, calendarHTML, callHTML, formHTML, resHTML;
 let loaded = false;
@@ -26,6 +27,13 @@ const loadComponents = async () => {
 }
 loadComponents();
 window.router = async (page)=>{
+    if(sessionStorage.getItem("page") && firstLoad)
+        page = sessionStorage.getItem("page");
+    else{
+        sessionStorage.setItem("page", page);
+    }
+    firstLoad = false;
+    
     form.classList.remove("navActive");
     home.classList.remove("navActive");
     calendar.classList.remove("navActive");
@@ -36,7 +44,7 @@ window.router = async (page)=>{
     if(page == 0){
         app.innerHTML = homeHTML;
         home.classList.add("navActive");
-        loadNotas();  
+        loadHome();  
     }
     if(page == 1) {
         app.innerHTML = formHTML;
@@ -45,6 +53,7 @@ window.router = async (page)=>{
     if(page == 2){
         app.innerHTML = calendarHTML;
         calendar.classList.add("navActive");
+        generar();
     }
     if(page == 3){
         app.innerHTML = resHTML;
