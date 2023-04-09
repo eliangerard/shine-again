@@ -19,8 +19,7 @@ const isAvailable = (json, month, day) => {
 
 const getTodayDateInGmtMinus6 = () => {
   const now = new Date();
-  const gmtMinus6Date = new Date(now.valueOf() - 6 * 60 * 60 * 1000); // Obtener la fecha en GMT-6
-  return gmtMinus6Date.getDate();
+  return now.getDate();
 }
 const getActualMonth = () => {
   const now = new Date();

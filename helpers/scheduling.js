@@ -80,7 +80,7 @@ const generateHours = async () => {
         redirect: 'follow'
     };
 
-    appointments = await fetch("https://fz853w9zuj.execute-api.us-east-2.amazonaws.com/dev/citas/horas?fecha=2023-04-08", requestOptions)
+    appointments = await fetch(`https://fz853w9zuj.execute-api.us-east-2.amazonaws.com/dev/citas/horas?fecha=${dateToDate}`, requestOptions)
         .then(response => response.json())
         .then(result => result)
         .catch(error => {
