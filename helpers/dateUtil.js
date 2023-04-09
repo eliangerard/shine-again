@@ -4,7 +4,7 @@ function getDate() {
     return fecha.toLocaleDateString('es-ES', opciones);
 }
 
-function getDate(mes, dia) {
+function getDateByMonth(mes, dia) {
     const fecha = new Date();
     fecha.setMonth(mes - 1); // Restamos 1 al mes porque en JavaScript los meses empiezan en 0 (enero es 0, febrero es 1, etc.)
     fecha.setDate(dia);

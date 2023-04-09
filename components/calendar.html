@@ -1,5 +1,9 @@
-<div id="calendarSection">
-    <div id="calendarApp">
+<div id="loadingHTML">
+
+    <div class="lds-ripple"><div></div><div></div></div>
+</div>
+<div id="calendarApp">
+<div id="calendarSection" class="calendarSectionInvisible">
     <h3>Agendar cita</h3>
         <div id="calendar">
             <div id="btnsCalendar">
@@ -18,113 +22,16 @@
     <div id="day">
         <h4 id="selectedDate">4 de abril</h4>
         <div id="hours">
-            
-            <div class="hourInfo">
-                <div class="time">
-                    8:00 am
-                </div>
-                <div class="hour">
-                    
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    9:00 am
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    10:00 am
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    11:00 am
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    12:00 am
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    1:00 pm
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    2:00 pm
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    3:00 pm
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    4:00 pm
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    5:00 pm
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    6:00 pm
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
-            <div class="hourInfo">
-                <div class="time">
-                    7:00 pm
-                </div>
-                <div class="hour">
-
-                </div>
-            </div>
         </div>
         <div id="dayBottom">
             <div id="timeOptions">
-                <p>30 mins</p>
-                <p>1 hr</p>
-                <p>2 hrs</p>
+                <p id="sd1" onclick="selectDuration(id)">30 mins</p>
+                <p id="sd2" onclick="selectDuration(id)">1 hr</p>
+                <p id="sd3" onclick="selectDuration(id)">2 hrs</p>
             </div>
             <div id="dayButtons">
                 <button class="secondary" onclick="closeDay()">Cancelar</button>
-                <button class="primary">Agendar</button>
+                <button class="primary" onclick="submitAppointment()">Siguiente</button>
             </div>
         </div>
     </div>

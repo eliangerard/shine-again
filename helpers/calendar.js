@@ -98,6 +98,9 @@ async function generateCalendar(date) {
     }
     table.appendChild(row);
   }
+  console.log("terminando")
+  document.getElementById("loadingHTML").style.display = "none";
+  document.getElementById("calendarSection").classList.add("calendarSectionVisible");
 }
 
 window.generateNextMonthCalendar = () => {

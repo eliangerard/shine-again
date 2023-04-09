@@ -25,6 +25,7 @@ const verifySession = async () => {
 
                 localStorage.setItem("access", result.access_token);
                 localStorage.setItem("refresh", result.refresh_token);
+                localStorage.setItem("id", result.id_token);
                 loadHome();
             })
             .catch(error => console.log('error', error));

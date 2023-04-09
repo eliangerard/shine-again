@@ -25,6 +25,9 @@ const loadHome = async () => {
                 const welcome = document.getElementById("welcome");
                 welcome.classList.remove("loadingText");
                 welcome.innerHTML = `Bienvenido, ${userData.UserAttributes[3].Value}`;
+                document.getElementById("homeContent").classList.add("cabecera","cVisible");
+                document.getElementById("loadingHTML").style.display = "none";
+                sessionStorage.setItem("sub", userData.UserAttributes[0].Value);
             }
         })
         .catch(error => console.log('error', error));

@@ -93,7 +93,7 @@ nav {
     background-color: rgb(255, 255, 255);
     transition: width 150ms;
     border-radius: 0 1rem 1rem 0;
-
+    z-index: 100;
 }
 
 nav h2 {
@@ -177,20 +177,32 @@ nav div:hover {
     width: 70%;
     transition: color 400ms;
 }
-
+.cabecera {
+    filter: opacity(0%);
+    transition: filter 150ms;
+}
+.cVisible {
+    filter: opacity(100%);
+}
 h3 {
     font-size: 2rem;
 }
 
-#calendarSection {
-    display: flex;
+.calendarSectionInvisible {
+    filter: opacity(0%);
+    transition: filter 150ms;
+}
+.calendarSectionVisible {
+    filter: opacity(100%);
 }
 
 #calendarApp {
     width: 100%;
+    padding-bottom: 4rem;
+    transition: filter 150ms;
 }
 #calendarApp h3 {
-    margin: 1rem;
+    margin: 1rem 0;
 }
 #hours {
     padding-top: 1rem;
@@ -214,7 +226,7 @@ h3 {
     transition: background-color 150ms;
 }
 
-.hour div:not(.ocupada):hover {
+.hour div:not(.ocupada):not(.hSelected):hover {
     background-color: #fafafa;
 }
 .hour:focus {
@@ -234,7 +246,7 @@ h3 {
 }
 
 #day {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -256,7 +268,7 @@ h3 {
 }
 .btnLlamar {
     justify-content: center;
-    background-color: #bcb0ffb6;
+    background-color: #7b67eeb6;
     border: none;
     color: white;
     font-weight: bold;
@@ -296,9 +308,20 @@ h3 {
     justify-content: center;
     height: calc(100% - 8px);
     margin: 0;
+    transition: background-color 150ms;
 }
 #timeOptions p:hover {
     background-color: #fff;
+}
+.selected {
+    background-color: #fff;
+}
+.hSelected {
+    background-color: #ffecb0b6;
+    outline: #d4a815 solid 2px;
+}
+.hSelected:hover {
+    background-color: #d4a815;
 }
 #dayButtons {
     display: flex;
@@ -544,10 +567,21 @@ iframe {
 }
 
 #welcome {
-    transition: color 150ms, width 1500ms;
+    transition: color 150ms, width 150ms;
 }
-
+#loadingHTML {
+    display:flex;
+    width: calc(100% - 10rem);
+    height: calc(100vh - 10rem);
+    margin-right: 10rem;
+    align-items: center;
+    justify-content: center;
+}
 @media screen and (max-width:800px) {
+    #loadingHTML {
+        width: 100%;
+        margin: 0;
+    }
     header {
         padding-left: 1rem;
         width: calc(100% - 1rem);
@@ -650,3 +684,52 @@ iframe {
         height: 13rem;
     }
 }
+
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #d8d8d8;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  
