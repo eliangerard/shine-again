@@ -45,6 +45,7 @@ const refreshToken = async () => {
             .then(response => response.json())
             .then(result => {
                 if (result.error) return false;
+                console.log("actualizando access token")
                 localStorage.setItem("access", result.access_token);
                 return true;
             })

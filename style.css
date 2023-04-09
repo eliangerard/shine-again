@@ -214,11 +214,18 @@ h3 {
     transition: background-color 150ms;
 }
 
-.hour:hover {
+.hour div:not(.ocupada):hover {
     background-color: #fafafa;
 }
 .hour:focus {
     background-color: #ffecb0b6;
+}
+.hour div {
+    width: 100%;
+    height: 50%;
+}
+.ocupada {
+    background-color: #f0f0f0;
 }
 .time {
     margin-top: -0.6rem;
@@ -245,6 +252,24 @@ h3 {
 }
 #day h4 {
     margin: 0.5rem;
+    text-align: center;
+}
+.btnLlamar {
+    justify-content: center;
+    background-color: #bcb0ffb6;
+    border: none;
+    color: white;
+    font-weight: bold;
+    
+}
+.btnLlamar label {
+    color: white;
+}
+.btnLlamar a {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color: white;
 }
 #day:hover {
     outline: #ffecb0b6 solid 0px;
@@ -346,13 +371,13 @@ td {
     transition: color 150ms, outline 150ms;
 }
 
-td:not(.empty) {
+.dayOfMonth {
     background-color: #fff;
     outline: #f0f0f0 solid 2px;
     font-weight: 500;
 }
 
-td:hover {
+td:not(.empty):hover {
     background-color: #ffecb0b6;
     outline: #d4a815 solid 2px;
 }
@@ -364,7 +389,10 @@ td:hover {
 .empty:hover {
     background-color: #f0f0f0;
 }
-
+.today {
+    outline: #d4a815 solid 2px;
+    background-color: white;
+}
 #contenido {
     display: flex;
     height: 100%;
@@ -453,11 +481,37 @@ article:focus-within b {
 }
 
 #callme {
-    text-align: center;
-    margin-top: 7rem;
-    line-height: 3rem;
+    width: 100%;
 }
-
+.btnAgregar {
+    background-color: white;
+}
+.btnLlamar:hover {
+    outline: #6d53ff solid 2px;
+    cursor: pointer;
+}
+.btnAgregar input {
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+input:disabled {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background-color: none;
+    border: none;
+}
+.btnAgregar input:focus {
+    outline: none;
+}
+.btnAgregar svg {
+    display: none;
+}
+.btnAgregar:focus-within svg {
+    stroke: #d4a815;
+    fill: #d4a815;
+}
 button {
     display: flex;
     align-items: center;
@@ -526,7 +580,7 @@ iframe {
     }
     #day {
         bottom: 6rem;
-        height: calc(100vh - 30vh);
+        height: calc(100vh - 32vh);
         width: calc(100% - 4rem);
     }
     #resVideos {

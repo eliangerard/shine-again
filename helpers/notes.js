@@ -55,9 +55,3 @@ const guardarNota = () => {
     fecha.innerHTML = "fechanueva";
     loadNotas();
 }
-
-const getDate = () => {
-    const fecha = new Date();
-    const opciones = { month: 'long', day: 'numeric' };
-    return fecha.toLocaleDateString('es-ES', opciones);
-}

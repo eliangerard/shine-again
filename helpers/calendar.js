@@ -1,6 +1,29 @@
 let month = new Date().getMonth();
+window.getMonth = () => { return month};
+const getToday = () => {
+  const fecha = new Date();
+  const year = fecha.getFullYear();
+  const month = String(fecha.getMonth() + 1).padStart(2, '0');
+  const day = String(fecha.getDate()).padStart(2, '0');
+  const formatedDate = `${year}-${month}-${day}`;
+  console.log(formatedDate);
+  return formatedDate;
+}
 
-function generateCalendar(date) {
+const isAvailable = (json, month, day) => {
+  const fechaBuscada = `2023-${month<10 ? "0"+month : month}-${day<10 ? "0"+day : day}`;
+  const dia = json.find(dayJSON => dayJSON.fecha == fechaBuscada);
+  console.log(fechaBuscada,dia);
+  return dia ? dia.disponibles : true;
+}
+
+const getTodayDateInGmtMinus6 = () => {
+  const now = new Date();
+  const gmtMinus6Date = new Date(now.valueOf() - 6 * 60 * 60 * 1000); // Obtener la fecha en GMT-6
+  return gmtMinus6Date.getDate();
+}
+
+async function generateCalendar(date) {
   console.log(month);
   const table = document.getElementById("calendarDays");
   const daysOfWeek = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
@@ -8,6 +31,8 @@ function generateCalendar(date) {
   // Eliminar la tabla anterior
   table.innerHTML = "";
 
+  const appointments = await getAppointmentsByDay(getToday());
+  console.log(appointments)
   // Crear el encabezado de la tabla con los días de la semana
   const headerRow = document.createElement("tr");
   daysOfWeek.forEach(day => {
@@ -55,6 +80,16 @@ function generateCalendar(date) {
       } else {
         cell.setAttribute("id", "day_" + dayOfMonth);
         cell.setAttribute("onclick", "openDay(id)");
+        const today = getTodayDateInGmtMinus6();
+
+        if(today > dayOfMonth)
+          cell.classList.add("empty");
+        if(today == dayOfMonth)
+          cell.classList.add("today");
+        if(today < dayOfMonth)
+          cell.classList.add("dayOfMonth");
+        if(!isAvailable(appointments.days,(month+1), dayOfMonth))
+          cell.classList.add("empty")
         // Celda con el número del día
         cell.textContent = dayOfMonth;
         dayOfMonth++;

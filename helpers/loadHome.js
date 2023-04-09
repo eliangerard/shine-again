@@ -1,4 +1,4 @@
-const loadHome = () => {
+const loadHome = async () => {
     loadNotas();
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + localStorage.getItem("access"));
@@ -16,7 +16,7 @@ const loadHome = () => {
             const { message, userData } = result;
             if(message.includes("Error") || message.includes("token has expired")){
                 console.log("errorrrrrrr");
-                if(refreshToken())
+                if(await refreshToken())
                     loadHome();
                 else
                     toSignin();

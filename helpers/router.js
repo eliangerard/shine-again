@@ -62,6 +62,7 @@ window.router = async (page)=>{
     if(page == 4){
         app.innerHTML = callHTML;
         call.classList.add("navActive");
+        loadPhone();
     }
 
 }
