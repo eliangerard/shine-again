@@ -255,6 +255,7 @@ h3 {
     z-index: 2;
     right: 1rem;
     background-color: white;
+    top:5rem;
     border-radius: 1rem;
     padding: 0.5rem 1rem;
     box-shadow: 0px 0px 18px -10px rgba(0,0,0,1);
@@ -613,6 +614,7 @@ iframe {
         font-size: 1rem;
     }
     #day {
+        top: auto;
         bottom: 6rem;
         height: calc(100vh - 32vh);
         width: calc(100% - 4rem);
