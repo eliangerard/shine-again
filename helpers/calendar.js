@@ -22,6 +22,11 @@ const getTodayDateInGmtMinus6 = () => {
   const gmtMinus6Date = new Date(now.valueOf() - 6 * 60 * 60 * 1000); // Obtener la fecha en GMT-6
   return gmtMinus6Date.getDate();
 }
+const getActualMonth = () => {
+  const now = new Date();
+  const month = new Date(now.valueOf() - 6 * 60 * 60 * 1000); // Obtener la fecha en GMT-6
+  return month.getMonth();
+}
 
 async function generateCalendar(date) {
   console.log(month);
@@ -81,13 +86,15 @@ async function generateCalendar(date) {
         cell.setAttribute("id", "day_" + dayOfMonth);
         cell.setAttribute("onclick", "openDay(id)");
         const today = getTodayDateInGmtMinus6();
-
-        if(today > dayOfMonth)
-          cell.classList.add("empty");
-        if(today == dayOfMonth)
-          cell.classList.add("today");
-        if(today < dayOfMonth)
-          cell.classList.add("dayOfMonth");
+        if(month == getActualMonth()){
+          if(today > dayOfMonth)
+            cell.classList.add("empty");
+          if(today == dayOfMonth)
+            cell.classList.add("today");
+          if(today < dayOfMonth)
+            cell.classList.add("dayOfMonth");
+          }
+        else cell.classList.add("dayOfMonth");
         if(!isAvailable(appointments.days,(month+1), dayOfMonth))
           cell.classList.add("empty")
         // Celda con el número del día
