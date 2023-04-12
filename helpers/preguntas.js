@@ -439,7 +439,29 @@ const preguntas = [
 
 ]
 
+let preguntaActual=0;
+let puntaje=0;
 const siguientePregunta = () => {
     const label = document.getElementById("pregunta");
-    
+    const respuestas = document.getElementById("respuestas");
+    const incisoshtml = document.getElementsByName("respuestas");
+    const incisos = [...incisoshtml]
+    if(preguntaActual==0){
+        if(incisos.find(inciso => inciso.checked).value==0){
+            return router(0)
+        }
+    }
+    else{
+        puntaje+=parseInt(incisos.find(inciso => inciso.checked).value);
+        console.log(puntaje);
+    }
+    let respuestasgeneradas="";
+    preguntaActual++
+    label.innerHTML = preguntas[preguntaActual].pregunta;
+    preguntas[preguntaActual].respuestas.forEach((respuesta,i) =>{
+        respuestasgeneradas+= `
+        <input type="radio" name="respuestas" value="${i}" class="respuesta">${respuesta}
+        `;
+    })
+    respuestas.innerHTML=respuestasgeneradas;
 }
