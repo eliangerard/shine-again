@@ -59,10 +59,10 @@ const generateHours = async () => {
                 ${index < 12 ? index + ":00 am" : index > 12 ? (index - 12) + ":00 pm" : index + ":00 pm"}
             </div>
             <div id="hour${index}" class="hour">
-                <div id="${index}FH" onclick="selectHour(id)">
+                <div id="${index}FH" class="half firstHalf" onclick="selectHour(id)">
 
                 </div>
-                <div id="${index}SH" onclick="selectHour(id)">
+                <div id="${index}SH" class="half secondHalf" onclick="selectHour(id)">
 
                 </div>
             </div>

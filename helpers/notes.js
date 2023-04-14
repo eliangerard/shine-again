@@ -52,6 +52,6 @@ const guardarNota = () => {
     notasJSON.unshift(nota);
     localStorage.setItem('notas', JSON.stringify(notasJSON));
     textarea.value = "";
-    fecha.innerHTML = "fechanueva";
+    fecha.innerHTML = getDate();
     loadNotas();
 }

@@ -9,9 +9,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: torpe o entumecido.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -19,9 +19,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Acalorado.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -29,19 +29,19 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con temblor en las piernas.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
     },
     {
-        "pregunta" : "Sintoma: Incapaz de relajarce.",
+        "pregunta" : "Sintoma: Incapaz de relajarse.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -49,9 +49,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con temor a que ocurra lo peor.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -59,9 +59,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Mareado o que se la va la cabeza.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -69,9 +69,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con latidos de corazón fuertes y acelerados.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -79,9 +79,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Inestable.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -89,9 +89,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Atemorizado o asustado.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -99,9 +99,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Nervioso.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -109,9 +109,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con sensación de bloqueo.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -119,9 +119,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con temblores en las manos.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -129,9 +129,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: inquieto, inseguro.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -139,9 +139,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con miedo a perder en control.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -149,9 +149,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con sensación de ahogo.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -159,9 +159,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con temor a morir.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -169,9 +169,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con miedo.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -179,9 +179,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con problemas digestivos.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -189,9 +189,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con desvanecimientos.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -199,9 +199,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con rubor facial.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -209,9 +209,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma: Con sudores, frios o calientes.",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -219,9 +219,9 @@ const preguntas = [
     {
         "pregunta" : "Sintoma:",
         "respuestas" : [
-            "en absuluto",
+            "En absoluto",
             "Levemente",
-            "moderadamente",
+            "Moderadamente",
             "severamente"
         ]
     
@@ -230,7 +230,7 @@ const preguntas = [
 
 
     {
-        "pregunta" : "Estado: tristeza",
+        "pregunta" : "Estado: <br> tristeza",
         "respuestas" : [
             "No me siento triste",
             "Me siento triste gran parte del tiempo",
@@ -240,7 +240,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Pesimismo",
+        "pregunta" : "Estado: <br> Pesimismo",
         "respuestas" : [
             "No estoy desalentado respecto a mi futuro",
             "Me siento más desalentado respecto de mi futuro que lo que solía estarlo",
@@ -250,7 +250,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Fracaso",
+        "pregunta" : "Estado: <br> Fracaso",
         "respuestas" : [
             "No me siento como un fracasado",
             "He fracasado más de lo que hubiera dabido",
@@ -260,7 +260,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Pérdida de placer",
+        "pregunta" : "Estado: <br> Pérdida de placer",
         "respuestas" : [
             "Obtengo tanto placer como siempre por las cosas de las que disfruto",
             "No disfruto tanto de las cosas como solía hacerlo",
@@ -270,7 +270,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Sentimientos de culpa",
+        "pregunta" : "Estado: <br> Sentimientos de culpa",
         "respuestas" : [
             "No me siento particularmente culpable",
             "Me siento culpable respecto de varias cosas que he hecho o que debería haber hecho",
@@ -280,7 +280,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Sentimientos de castigo",
+        "pregunta" : "Estado: <br> Sentimientos de castigo",
         "respuestas" : [
             "No me siento que este siendo castigado",
             "Siento que tal vez pueda ser castigado",
@@ -290,7 +290,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Disconformidad con uno mismo",
+        "pregunta" : "Estado: <br> Disconformidad con uno mismo",
         "respuestas" : [
             "Siento acerca de mi lo mismo de siempre",
             "He perdido la confianza en mí mismo",
@@ -300,7 +300,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Autocritica",
+        "pregunta" : "Estado: <br> Autocritica",
         "respuestas" : [
             "No me critico ni me culpo más de lo habitual",
             "Estoy más critico conmigo mismo de lo que solía estarlo",
@@ -310,7 +310,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: pensamientos o deseos suicidas",
+        "pregunta" : "Estado: <br> pensamientos o deseos suicidas",
         "respuestas" : [
             "No tengo ningún pensamiento de matarme",
             "He tenido pensamientos de matarme, pero no lo haría",
@@ -320,7 +320,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Llanto",
+        "pregunta" : "Estado: <br> Llanto",
         "respuestas" : [
             "No lloro más de lo que solía hacerlo",
             "Lloro más de lo que solía hacerlo",
@@ -330,7 +330,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Agitación",
+        "pregunta" : "Estado: <br> Agitación",
         "respuestas" : [
             "No estoy más inquieto o tenso que lo habitual",
             "Me siento más inquieto o tenso que lo habitual",
@@ -340,7 +340,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Pérdida de interés",
+        "pregunta" : "Estado: <br> Pérdida de interés",
         "respuestas" : [
             "No he perdido el interés en otras actividades o personas",
             "Estoy menos interesado que antes en otras personas o cosas",
@@ -350,7 +350,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Indecisión",
+        "pregunta" : "Estado: <br> Indecisión",
         "respuestas" : [
             "Tomo mis propias decisiones tan bien como siempre",
             "Me resulta más dificil que de costumbre tomar decisiones",
@@ -360,7 +360,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Pérdida de energía",
+        "pregunta" : "Estado: <br> Pérdida de energía",
         "respuestas" : [
             "Tengo tanta energía como siempre",
             "Tengo menos energía que la que solía tener",
@@ -370,7 +370,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Cambios en los hábitos de sueño",
+        "pregunta" : "Estado: <br> Cambios en los hábitos de sueño",
         "respuestas" : [
             "No he experimentado ningún cambio en mis hábitos de sueño",
             "Duermo un poco más que lo habitual",
@@ -383,7 +383,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Irritabilidad",
+        "pregunta" : "Estado: <br> Irritabilidad",
         "respuestas" : [
             "No estoy tan irritable que lo habitual",
             "Estoy más irritable que lo habitual",
@@ -393,7 +393,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Cambios en el apetito",
+        "pregunta" : "Estado: <br> Cambios en el apetito",
         "respuestas" : [
             "No he experimentado ningún cambio en mi apetito",
             "Mi apetito es un poco menor que lo habitual",
@@ -406,7 +406,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Dificultad de concentración",
+        "pregunta" : "Estado: <br> Dificultad de concentración",
         "respuestas" : [
             "Puedo concentrarme tan bien como siempre",
             "No puedo concentrarme tan bien como habitualmente",
@@ -416,7 +416,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Cansancio o fatiga",
+        "pregunta" : "Estado: <br> Cansancio o fatiga",
         "respuestas" : [
             "No estoy más cansado o fatigado que lo habitual ",
             "Me fatigo o me canso más fácilmente que lo habitual",
@@ -426,7 +426,7 @@ const preguntas = [
     
     },
     {
-        "pregunta" : "Estado: Pérdida de interés en el sexo",
+        "pregunta" : "Estado: <br> Pérdida de interés en el sexo",
         "respuestas" : [
             "No he notado ningún cambio reciente en mi interés por el sexo",
             "Estoy menos interesado en el sexo de lo que solía estarlo",
@@ -460,7 +460,10 @@ const siguientePregunta = () => {
     label.innerHTML = preguntas[preguntaActual].pregunta;
     preguntas[preguntaActual].respuestas.forEach((respuesta,i) =>{
         respuestasgeneradas+= `
-        <input type="radio" name="respuestas" value="${i}" class="respuesta">${respuesta}
+        <div>
+            <input type="radio" name="respuestas" value="${i}" class="respuesta">
+            <p>${respuesta}</p>
+        </div>
         `;
     })
     respuestas.innerHTML=respuestasgeneradas;

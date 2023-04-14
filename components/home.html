@@ -2,13 +2,21 @@
 
     <div class="lds-ripple"><div></div><div></div></div>
 </div>
-<h3 id="welcome" class="loadingText">.</h3>
-<div id="homeContent"class="cabecera">
-    <article>
-        <div id="inputnote">
-            <b id="date">4 de abril</b>
-            <textarea oninput="resize()" onblur="guardarNota()" rows="1" name="nota" id="note" placeholder="Nueva entrada..."></textarea>
+<div id="homeContent" class="cabecera">
+    <div id="firstC">
+    
+        <h3 id="welcome" class="loadingText">.</h3>
+        <div >
+            <article>
+                <div id="inputnote">
+                    <b id="date">4 de abril</b>
+                    <textarea oninput="resize()" onblur="guardarNota()" rows="1" name="nota" id="note" placeholder="Nueva entrada..."></textarea>
+                </div>
+            </article>
+            <div id="notas"></div>
         </div>
-    </article>
-    <div id="notas"></div>
+    </div>
+    <div id="secondC">
+        <h3>Recomendado</h3>
+    </div>
 </div>

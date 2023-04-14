@@ -39,6 +39,7 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: #f8f8f8;
 }
 
 header {
@@ -49,7 +50,7 @@ header {
     position: fixed;
     width: calc(100% - 2rem);
     height: 5rem;
-    z-index: 100;
+    z-index: 101;
     padding-left: 2rem;
 }
 
@@ -63,6 +64,11 @@ h1 {
     width: 6rem;
     justify-content: space-around;
     padding-right: 1rem;
+
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 #profile svg {
@@ -83,17 +89,20 @@ h1 {
 nav {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 6rem);
     width: 12rem;
     padding: 1rem;
+    padding-top: 5rem;
     overflow: hidden;
-    top: 4rem;
+    top: 0;
     left: 0;
     position: fixed;
     background-color: rgb(255, 255, 255);
     transition: width 150ms;
     border-radius: 0 1rem 1rem 0;
     z-index: 100;
+    /* border: 2px solid #f0f0f0; */
+    box-shadow: 1px 5px 5px 2px rgba(0, 0, 0, 0.06);
 }
 
 nav h2 {
@@ -116,8 +125,67 @@ nav svg {
 
 .avatarSmall {
     height: 2.5rem;
+    border-radius: 100%;
+    border: 2px solid #d4a71500;
+    transition: border 150ms, outline 150ms;
+    outline: #ffecb0b6 solid 0px;
+    cursor: pointer;
+}
+.avatarSmall:hover {
+    outline: #ffecb0b6 solid 6px;
 }
 
+#profilePanel {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border-radius: 1rem;
+    height: 12rem;
+    width: 12rem;
+    top: 0.3rem;
+    right: 0.3rem;
+    flex-direction: column;
+    box-shadow: -1px 0px 15px 2px rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+    justify-content: space-around;
+    text-align: center;
+    user-select: none;
+}
+#profilePanel img {
+    height: 3rem;
+    width: 3rem;
+}
+#profilePanel .imgContainer {
+    display: flex;
+    justify-content: center;
+}
+#profilePanel .options {
+    display: flex;
+    align-items: center;
+    color: #9b9b9b;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    transition: background-color 150ms, color 150ms;
+}
+#profilePanel .options:hover {
+    cursor: pointer;
+    background-color: #ffecb0b6;
+    color: #d4a815;
+}
+#profilePanel .options:hover svg {
+    background-color: #ffecb0b6;
+    fill: #d4a815;
+    color: #d4a815;
+}
+#profilePanel .name {
+    justify-content: center;
+    color: #000;
+    font-size: large;
+}
+#profilePanel div p {
+    margin: 0;
+}
 #active {
     fill: black;
 }
@@ -144,7 +212,6 @@ nav div {
     outline: none;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
-
 }
 
 nav div svg {
@@ -165,12 +232,15 @@ nav div:hover {
 }
 
 #app {
-    margin-left: 15rem;
+    margin-left: 17rem;
     margin-top: 5rem;
     height: auto;
     padding-bottom: 5rem;
 }
-
+#homeContent {
+    display: flex;
+    width: 100%;
+}
 .loadingText {
     color: #ffffff;
     border-radius: 1rem;
@@ -219,7 +289,7 @@ h3 {
 }
 
 .hour {
-    border-top: 2px solid #f0f0f0;
+    border-top: 3px solid #f0f0f0;
     width: 80%;
     height: 3rem;
     margin: 0 1rem;
@@ -287,8 +357,36 @@ h3 {
 #day:hover {
     outline: #ffecb0b6 solid 0px;
 }
+#calendarSection {
+    display: flex;
+    width: 100%;
+}
+#firstC {
+    width: 55%;
+}
+#secondC {
+    margin: 0 2rem;
+    width: calc(45% - 4rem);
+}
 #calendar {
-    width: 80%;
+    width: 100%;
+}
+.cita {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.06);
+    width: calc(100% - 2rem);
+    padding: 1rem;
+}
+.cita h4 {
+    margin: 0;
+}
+.cita svg {
+    height: 2rem;
+    width: 2rem;
 }
 #timeOptions {
     margin: 1rem 0;
@@ -318,11 +416,11 @@ h3 {
     background-color: #fff;
 }
 .hSelected {
-    background-color: #ffecb0b6;
-    outline: #d4a815 solid 2px;
+    background-color: #d4a815;
+    transition: background-color 150ms;
 }
 .hSelected:hover {
-    background-color: #d4a815;
+    background-color: #e9c95fb2;
 }
 #dayButtons {
     display: flex;
@@ -344,12 +442,22 @@ h3 {
 }
 .secondary {
     background-color: #fff;
-    outline: #f0f0f0 solid 3px;
+    outline: #fff solid 3px;
+    font-weight: bold;
+    color: #9b9b9b;
+    transition: background-color 150ms, color 150ms, outline 150ms;
 }
 .primary {
     background-color: #f0f0f0;
+    color: #9b9b9b;
     outline: #f0f0f0 solid 3px;
     font-weight: bold;
+    transition: background-color 150ms, color 150ms, outline 150ms;
+}
+.primary:hover, .secondary:hover {
+    color: #d4a815;
+    outline: #ffecb0b6 solid 3px;
+    background-color: #ffecb0b6;
 }
 #btnsCalendar {
     display: flex;
@@ -358,25 +466,30 @@ h3 {
     height: 3rem;
     justify-content: space-around;
     border-radius: 1rem 1rem 0 0;
-    background-color: #f0f0f0;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
 }
 h4 {
     font-size: larger;
 }
 
 .monthBtn {
-    background-color: #f0f0f0;
+    background-color: #fff;
     width: 4rem;
 }
 
+#calendar {
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 1rem
+}
 table {
     font-family: 'Poppins', sans-serif;
     width: calc(100%);
     border-collapse: separate;
     border-spacing: 0.5rem;
     border-radius: 0 0 1rem 1rem;
-    border: 2px solid #f0f0f0;
-    background-color: #fafafa;
+    border: 2px solid #fff;
+    background-color: #fff;
 }
 
 tr {
@@ -410,12 +523,29 @@ td:not(.empty):hover {
     color: rgba(0, 0, 0, 0.486);
 }
 
-.empty:hover {
-    background-color: #f0f0f0;
-}
 .today {
-    outline: #d4a815 solid 2px;
+    outline: #9b9b9b solid 2px;
     background-color: white;
+}
+.half {
+    transition: outline 150ms, background-color 150ms;
+}
+.firstHalf {
+    border-bottom: 1px solid #f0f0f0;
+}
+#respuestas {
+    display: flex;
+    flex-direction: column;
+}
+#respuestas div {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+#respuestas p {
+    height: 1.36rem;
+    margin: 0;
+    margin-left: 0.5rem;
 }
 #contenido {
     display: flex;
@@ -429,13 +559,35 @@ td:not(.empty):hover {
 
 #preguntaPapa {
     display: flex;
-    justify-content: center;
-    width: 80%;
+    align-items: end;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 0.5rem 0;
 }
+#preguntaPanel {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.06);
+    height: 15rem;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+#buttonContainer button {
+    background-color: #f0f0f0;
+    color: #9b9b9b;
+    padding: 1rem;
+    font-weight: bold;
+}
 #pregunta {
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
 #monito {
@@ -454,10 +606,12 @@ article {
     border-radius: 1rem;
     padding: 0.5rem 3rem;
     margin: 1rem 0;
-    width: 60%;
-    border: 2px solid #f0f0f0;
+    width: calc(100% - 6rem - 4px);
+    border: 2px solid #ffffff00;
+    box-shadow: -1px 3px 5px 2px rgba(0, 0, 0, 0.06);
     color: #9b9b9b;
     outline: #ffecb0b6 solid 0px;
+    background-color: #fff;
     transition: outline 150ms, border 150ms;
 }
 
@@ -579,6 +733,16 @@ iframe {
     justify-content: center;
 }
 @media screen and (max-width:800px) {
+    #calendarSection, #homeContent, #contenido {
+        flex-direction: column;
+    }
+    #firstC {
+        width: 100%;
+    }
+    #secondC {
+        width: 100%;
+        margin-left: 0;
+    }
     #loadingHTML {
         width: 100%;
         margin: 0;
@@ -586,7 +750,7 @@ iframe {
     header {
         padding-left: 1rem;
         width: calc(100% - 1rem);
-        background-color: white;
+        background-color: #f8f8f8;
     }
 
     nav {
