@@ -38,7 +38,8 @@ const openDay = (idDay) => {
     const title = document.getElementById("selectedDate");
     const dayPanel = document.getElementById("day");
     const dia = parseInt(idDay.substring(4));
-    dateToDate = `2023-${(getMonth() + 1)}-${dia < 10 ? "0" + dia : dia}`;
+    const mes = getMonth() + 1;
+    dateToDate = `2023-${mes < 10 ? "0"+mes : mes}-${dia < 10 ? "0" + dia : dia}`;
     title.innerHTML = getDateByMonth((getMonth() + 1), idDay.substring(4))
     if (!day.classList.contains("empty")) {
         dayPanel.style.display = "block";
@@ -119,10 +120,14 @@ const selectHour = (id) => {
 
     selected.classList.add("hSelected");
     lastSelected = selected;
-    if (id.includes("SH"))
-        hourToDate = id.substring(0, id.indexOf("S")) + ":30";
-    if (id.includes("FH"))
-        hourToDate = id.substring(0, id.indexOf("F")) + ":00";
+    if (id.includes("SH")){
+        const hora = id.substring(0, id.indexOf("S"));
+        hourToDate = (hora < 10 ? "0"+hora : hora) + ":30:00.000";
+    }
+    if (id.includes("FH")){
+        const hora = id.substring(0, id.indexOf("F"));
+        hourToDate = (hora < 10 ? "0"+hora : hora) + ":00:00.000";
+    }
 
     console.log(dateToDate, hourToDate)
 }
@@ -164,16 +169,19 @@ const submitAppointment = async () => {
         redirect: 'follow'
     };
 
-    await fetch(`https://fz853w9zuj.execute-api.us-east-2.amazonaws.com/dev/citas?paciente=Elian&fecha_hora=${dateToDate}T${hourToDate}:00.000Z&duracion=${duration}`, requestOptions)
+    console.log(`idUser=${sessionStorage.getItem("user")}&paciente=Elian&fecha_hora=${getISODate(hourToDate, dateToDate, '-06:00')}&duracion=${duration}`);
+    await fetch(`https://fz853w9zuj.execute-api.us-east-2.amazonaws.com/dev/citas?idUser=${sessionStorage.getItem("user")}&paciente=Elian&fecha_hora=${getISODate(hourToDate, dateToDate, '-06:00')}&duracion=${duration}`, requestOptions)
         .then(response => response.json())
         .then(async result => {
             console.log(result)
-            if(result.message)
-                if(result.message.includes("token has expired"))
-                    if(await verifySession())
+            if (result.message)
+                if (result.message.includes("token has expired"))
+                    if (await verifySession())
                         return submitAppointment();
-            if(result.message.includes("exitosamente"))
+            if (result.message.includes("exitosamente")){
                 generateHours();
+                getUserDates();
+            }
         })
         .catch(error => console.log('error', error));
 }
