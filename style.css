@@ -1,28 +1,35 @@
 :root {
     --gray: #9b9b9b;
 }
-
+#settingsPanel .imgContainer {
+    align-items: center;
+}
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
+    height: 8px;
+    padding: 1rem;
+    margin: 1rem;
     background-color: #f0f0f000;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
+    margin: 1rem;
     border-radius: 1rem;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #fff;
+    margin: 1rem;
+    background-color: #f0f0f0;
     border-radius: 1rem;
     transition: background-color 150ms;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #f0f0f0;
+    background-color: #e2e2e2;
 }
 
 * {
@@ -53,7 +60,10 @@ header {
     z-index: 101;
     padding-left: 2rem;
 }
-
+.monthBtn img {
+    height: 2rem;
+    filter: opacity(50%);
+}
 h1 {
     font-size: 1.5rem;
 }
@@ -140,8 +150,6 @@ nav svg {
     position: absolute;
     background-color: white;
     border-radius: 1rem;
-    height: 12rem;
-    width: 12rem;
     top: 0.3rem;
     right: 0.3rem;
     flex-direction: column;
@@ -150,10 +158,110 @@ nav svg {
     justify-content: space-around;
     text-align: center;
     user-select: none;
+    transition: width 150ms, height 150ms;
 }
-#profilePanel img {
-    height: 3rem;
-    width: 3rem;
+#editAvatarPanel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#editAvatar {
+    height: 5rem;
+    width: 5rem;
+}
+.smallPanel {
+    height: 12rem;
+    width: 12rem;
+}
+.openedSettings {
+    width: 20rem;
+    height: fit-content;
+}
+.primaryContainer {
+    display: flex;
+    justify-content: end;
+    margin-right: 0.5rem;
+}
+#editSvg {
+    position:absolute;
+    top: -0.3rem;
+    right: -0.3rem;
+    z-index: 2;
+    background-color: #f0f0f0;
+}
+#selectAvatar {
+    outline: #f0f0f0 solid 2px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-y: auto;
+    margin-left: 1rem;
+}
+
+.selectableAvatar {
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+}
+.selectableAvatar:hover {
+    outline: #ffecb0b6 solid 4px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+#userData {
+    margin: 1rem 0;
+}
+#verified {
+    background-color: #ffecb0b6;
+    color: #d4a815;
+    border-radius: 1rem;
+    margin-left: 1rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+}
+#userData .label {
+    font-size: small;
+    color: #9b9b9b;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+#userData input {
+    border-radius: 1rem;
+    border: 2px solid #f0f0f0;
+    padding: 0.4rem;
+    width: calc(100% - 1rem);
+    outline: #ffecb0b6 solid 0px;
+    transition: border 150ms, outline 150ms;
+}
+#userData input:focus {
+    border: 2px solid #d4a815;
+    outline: #ffecb0b6 solid 4px;
+}
+#userName {
+    display: flex;
+}
+.verifield {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    width: calc(100% - 1rem);
+    margin: 0.5rem;
+}
+#settingsPanel {
+    display: none;
+    height: 100%;
+}
+#settingsPanel .name {
+    margin-bottom: 1rem;
+    font-size: 3rem;
 }
 #profilePanel .imgContainer {
     display: flex;
@@ -581,8 +689,8 @@ td:not(.empty):hover {
     justify-content: right;
 }
 #buttonContainer button {
-    background-color: #f0f0f0;
-    color: #9b9b9b;
+    background-color: #ffecb0b6;
+    color: #d4a815;
     padding: 1rem;
     font-weight: bold;
 }
@@ -673,13 +781,6 @@ article:focus-within b {
     border: none;
     width: 100%;
     text-align: center;
-}
-input:disabled {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    background-color: none;
-    border: none;
 }
 .btnAgregar input:focus {
     outline: none;

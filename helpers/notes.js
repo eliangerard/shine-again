@@ -21,7 +21,7 @@ const loadNotas = () => {
         <article id="${"nota"+i}" class="notes">
             <div>
                 <b>${nota.fecha}</b>
-                <textarea id="${"txa"+i}" rows="1">${nota.contenido}</textarea>
+                <textarea id="${"txa"+i}" rows="1" onblur="actualizarNota(id)">${nota.contenido}</textarea>
                 </div>
                 </article>
                 `;
@@ -54,4 +54,14 @@ const guardarNota = () => {
     textarea.value = "";
     fecha.innerHTML = getDate();
     loadNotas();
+}
+
+const actualizarNota = (id) => {
+    const textarea = document.getElementById(id);
+    const i = id.substring(3);
+    console.log(i)
+    //const fecha = document.getElementById("date"+i);
+
+    notasJSON[i].contenido = textarea.value;
+    localStorage.setItem('notas', JSON.stringify(notasJSON));
 }
